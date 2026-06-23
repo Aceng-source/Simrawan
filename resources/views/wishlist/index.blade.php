@@ -17,9 +17,9 @@
     <div class="wishlist-card">
         <div class="img-placeholder"><i class="fas fa-fish"></i></div>
         <div class="card-body">
-            <div class="cust-name">{{ $w->customer->nama }}</div>
+            <div class="cust-name">{{ $w->customer?->nama ?? 'Customer Terhapus' }}</div>
             <div class="fish-info">
-                <span class="fish-name">{{ $w->stokIkan->jenis_ikan }}</span>
+                <span class="fish-name">{{ $w->stokIkan?->jenis_ikan ?? 'Produk Terhapus' }}</span>
                 <span class="badge badge-primary" style="font-size:0.65rem;">Wishlist</span>
             </div>
             <div class="info-row">
@@ -30,7 +30,7 @@
             </div>
             <div style="margin-top:10px;">
                 <button class="btn btn-edit" style="width:100%;justify-content:center;"
-                    onclick="openDetailModal({{ $w->id }}, '{{ $w->customer->nama }}', '{{ $w->stokIkan->jenis_ikan }}', '{{ $w->ukuran }}', {{ $w->jumlah }}, '{{ $w->status }}')">
+                    onclick="openDetailModal({{ $w->id }}, '{{ $w->customer?->nama ?? 'Customer Terhapus' }}', '{{ $w->stokIkan?->jenis_ikan ?? 'Produk Terhapus' }}', '{{ $w->ukuran }}', {{ $w->jumlah }}, '{{ $w->status }}')">
                     Detail
                 </button>
             </div>
