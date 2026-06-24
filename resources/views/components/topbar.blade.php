@@ -32,23 +32,29 @@
 
 {{-- Modal Logout --}}
 <div class="modal-overlay" id="modal-logout">
-    <div class="modal modal-sm modal-center">
-        <button class="modal-close" onclick="closeModal('modal-logout')">
+    <div class="modal" style="max-width:380px; text-align:center; padding: 32px 24px; border-radius: 18px;">
+        <button class="modal-close" onclick="closeModal('modal-logout')" style="position:absolute;top:16px;right:16px;">
             &times;
         </button>
 
-        <p class="modal-title">
+        <div style="font-size: 3rem; color: var(--danger); margin-bottom: 16px;">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 8px;">Konfirmasi Logout</h3>
+
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 24px;">
             Apakah anda yakin ingin logout?
         </p>
 
         <form action="{{ route('logout') }}" method="POST">
             @csrf
 
-            <div class="modal-actions center">
-                <button type="submit" class="btn btn-success">
+            <div style="display: flex; gap: 12px;">
+                <button type="submit" class="btn btn-success" style="flex: 1; justify-content: center; padding: 11px; font-weight: 700; border-radius: 10px;">
                     Ya
                 </button>
-                <button type="button" class="btn btn-danger" onclick="closeModal('modal-logout')">
+                <button type="button" class="btn btn-danger" onclick="closeModal('modal-logout')" style="flex: 1; justify-content: center; padding: 11px; font-weight: 700; border-radius: 10px;">
                     Batal
                 </button>
             </div>

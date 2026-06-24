@@ -149,15 +149,23 @@
 
 {{-- Modal Hapus --}}
 <div class="modal-overlay" id="modal-hapus">
-    <div class="modal" style="max-width:380px;text-align:center;">
+    <div class="modal" style="max-width:380px; text-align:center; padding: 32px 24px; border-radius: 18px;">
         <button class="modal-close" onclick="closeModal('modal-hapus')" style="position:absolute;top:16px;right:16px;">&times;</button>
-        <p style="font-size:1rem;font-weight:600;margin:24px 0 20px;">Apakah anda yakin ingin menghapus?</p>
+        
+        <div style="font-size: 3rem; color: var(--danger); margin-bottom: 16px;">
+            <i class="fas fa-trash-alt"></i>
+        </div>
+
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 8px;">Konfirmasi Hapus</h3>
+
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 24px;">Apakah anda yakin ingin menghapus?</p>
+        
         <form id="form-hapus" method="POST">
             @csrf
             @method('DELETE')
-            <div style="display:flex;gap:12px;justify-content:center;">
-                <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Ya</button>
-                <button type="button" class="btn btn-danger" onclick="closeModal('modal-hapus')">Batal</button>
+            <div style="display:flex; gap:12px; justify-content:center;">
+                <button type="submit" class="btn btn-success" style="flex: 1; justify-content: center; padding: 11px; font-weight: 700; border-radius: 10px;"><i class="fas fa-check"></i> Ya</button>
+                <button type="button" class="btn btn-danger" onclick="closeModal('modal-hapus')" style="flex: 1; justify-content: center; padding: 11px; font-weight: 700; border-radius: 10px;">Batal</button>
             </div>
         </form>
     </div>
